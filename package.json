@@ -1,0 +1,28 @@
+{
+  "name": "inventory_app_tod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenstrange-blip/inventory_app_tod.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenstrange-blip/inventory_app_tod/issues"
+  },
+  "homepage": "https://github.com/stephenstrange-blip/inventory_app_tod#readme",
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.15.6"
+  }
+}
