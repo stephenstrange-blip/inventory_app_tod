@@ -1,4 +1,75 @@
-html {
+html, body {
   background-color: black;
-  color: white;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
 }
+
+.body_container, header {
+  display: flex;
+  width: inherit;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: 50px;
+}
+
+header p {
+  width: 70px;
+}
+
+section {
+  display: grid;
+  grid-template: repeat(2, minmax(250px, 350px)) / 1fr 1fr;
+  grid-template-areas: "feat1 feat2" ". feat3";
+  width: 70%;
+  padding-top: 5rem;
+  gap: 2rem;
+}
+
+section > div > img {
+  border-radius: 15px;
+  object-fit: cover;
+  /* object-position: 0 190%; */
+  animation: slideDown 1s ease-in-out 0s 1 normal forwards;
+  /* border: 2px solid white; */
+}
+
+.feat1 {
+  grid-area: feat1;
+  transform: translateY(30%);
+}
+.feat2 {
+  grid-area: feat2;
+}
+.feat3 {
+  grid-area: feat3;
+  transform: translateY(15%);
+}
+
+@keyframes slideDown {
+  from {
+    object-position: 0 190%;
+  }
+  to {
+    object-position: 0 65%;
+  }
+  
+}
+
+
+
