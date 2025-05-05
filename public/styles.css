@@ -49,26 +49,25 @@ section {
 section > div > img {
   border-radius: 15px;
   object-fit: cover;
-  /* object-position: 0 190%; */
   animation: slideDown 1s ease-in-out 0s 1 normal forwards;
-  /* border: 2px solid white; */
+ 
 }
 
 .feat1 {
   grid-area: feat1;
-  transform: translateY(45%);
+  transform: translateY(25%);
 }
 .feat2 {
   grid-area: feat2;
 }
 .feat3 {
   grid-area: feat3;
-  transform: translateX(-10%);
+  transform: translateX(-30%);
 }
 
 @keyframes slideDown {
   from {
-    object-position: 0 190%;
+    object-position: 0 200%;
   }
   to {
     object-position: 0 65%;
