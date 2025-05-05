@@ -1,7 +1,14 @@
 const { Router } = require("express");
+const {
+  indexController,
+  shopController,
+  errorController,
+} = require("../controllers/userController");
 
 const indexRouter = new Router();
 
-indexRouter.get("/", (req, res) => res.status(200).send("Initial"));
+indexRouter.get("/", indexController);
+indexRouter.get("/shop", shopController);
+indexRouter.get("{*any}", errorController);
 
 module.exports = indexRouter;
