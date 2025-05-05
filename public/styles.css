@@ -51,14 +51,14 @@ section > div > img {
 
 .feat1 {
   grid-area: feat1;
-  transform: translateY(30%);
+  transform: translateY(45%);
 }
 .feat2 {
   grid-area: feat2;
 }
 .feat3 {
   grid-area: feat3;
-  transform: translateY(15%);
+  transform: translateX(-10%);
 }
 
 @keyframes slideDown {
