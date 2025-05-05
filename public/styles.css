@@ -32,6 +32,11 @@ header p {
   width: 70px;
 }
 
+h2 a {
+  text-decoration: unset;
+  color: inherit;
+}
+
 section {
   display: grid;
   grid-template: repeat(2, minmax(250px, 350px)) / 1fr 1fr;
