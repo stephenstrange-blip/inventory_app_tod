@@ -12,7 +12,7 @@ const DB = {
 
 const QUERIES = {
   SELECT_ALL:
-    "SELECT i.product_id, p.name, c.name AS category, i.stock, i.price FROM inventory AS i LEFT JOIN products as p ON i.product_id = p.id LEFT JOIN categories as c ON i.category_id = c.id",
+    "SELECT i.product_id, p.name, c.name AS category, i.stock, i.price, i.image_uri FROM inventory AS i LEFT JOIN products as p ON i.product_id = p.id LEFT JOIN categories as c ON i.category_id = c.id",
 };
 
 const pool = new Pool({

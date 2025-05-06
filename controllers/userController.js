@@ -19,7 +19,7 @@ async function shopController(req, res) {
   try {
     const row = await fetchProducts();
     console.log(row);
-    res.status(200).render("shop");
+    res.status(200).render("shop", { products: row });
   } catch (err) {
     console.log(err);
     res.status(404).render("error");
