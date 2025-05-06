@@ -26,8 +26,25 @@ async function shopController(req, res) {
   }
 }
 
+async function itemController(req, res) {
+  try {
+    const { product_id } = req.params;
+    const row = await fetchProducts(product_id);
+    console.log(product_id, row);
+    res.status(200).render("item", { product: row[0] });
+  } catch (err) {
+    console.log(err);
+    res.status(404).render("error");
+  }
+}
+
 function errorController(req, res) {
   res.status(404).render("error");
 }
 
-module.exports = { indexController, shopController, errorController };
+module.exports = {
+  indexController,
+  shopController,
+  errorController,
+  itemController,
+};

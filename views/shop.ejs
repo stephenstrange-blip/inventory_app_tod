@@ -22,26 +22,38 @@
       </header>
       <main>
         <% locals.products.forEach( product => { %>
-          <div class="card">
-            <p>
-              <img src= <%= product.image_uri %> alt="" />
-            </p>
-            <span>
-              <h1 class="title"><%= product.name %></h1>
-              <h2 class="category"><%= product.category %></h2>
-              <h1 class="price">$ <i><%= product.price %></i></h1>
-              <% if ( product.stock < 0 ) { %>
-                <h2 class="stock">Coming soon</h2>
-              <% } else if ( product.stock === 0 ) { %>
-                <h2 class="stock">Sold Out</h2>
-              <% } else { %>
-                <h2 class="stock">Stock: <i><%= product.stock %></i></h2>
-              <% } %>
-
-            </span>
-          </div>
+          <form action="/shop/<%= product.product_id %>" method="POST">
+            <div class="card"> 
+              <p>
+                <img src= <%= product.image_uri %> alt="ss" />
+              </p>
+              <span>
+                <h1 class="title"><%= product.name %></h1>
+                <h2 class="category"><%= product.category %></h2>
+                <h1 class="price">$ <i><%= product.price %></i></h1>
+                <% if ( product.stock < 0 ) { %>
+                  <h2 class="stock">Coming soon</h2>
+                <% } else if ( product.stock === 0 ) { %>
+                  <h2 class="stock">Sold Out</h2>
+                <% } else { %>
+                  <h2 class="stock">Stock: <i><%= product.stock %></i></h2>
+                <% } %>
+              </span>
+            </div>
+          </form>
         <% }) %>
       </main>
+
+      <script>
+        const cards = document.querySelectorAll(".card");
+        cards.forEach(card => {
+          card.addEventListener("click", (e) => {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            card.parentElement.submit();
+          })
+        })
+      </script>
     </div>
   </body>
 </html>
