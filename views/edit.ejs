@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css_reset.css" />
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+  <div class="body_container">
+    <div class="card">
+      <p>
+        <img src= <%= product.image_uri %> alt="" />
+      </p>
+      <span>
+        <h1 class="title"><%= product.name %></h1>
+        <form onsubmit="confirm('Confirm item update?')" action="/shop/<%= product.product_id %>/edit" method="POST" id="stock">
+          <label for="price"> </label>
+          <div class="price">
+            <p>$</p>
+            <input type="number" min="0" step=".01" id="price" name="product_price"  value="<%= product.price %>">
+    
+          </div>
+          <label for="_stock"></label>
+          <div class="stock">
+            <p>
+              <img src="/assets/arrow_left.svg" alt="">
+            </p>
+            <input type="number" min="-1" step="1" id="_stock" name="product_stock" value="<%= product.stock %>">
+            <p>
+              <img src="/assets/arrow_right.svg" alt="">
+            </p>
+          </div>
+          <div class="buttons">
+            <button type="submit">Update</button>
+            <button>Cancel</button>
+          </div>
+        </form>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
