@@ -26,11 +26,10 @@
           <h2 class="stock">Stock: <i><%= product.stock %></i></h2>
         <% } %>
       </span>
-  </div>
+    </div>
   </div>
   <script>
     const container = document.querySelector(".body_container");
-    console.log(document.documentElement.clientHeight, container.style.maxHeight);
     container.style.height = `${document.documentElement.clientHeight}px`;
   </script>
 </body>
