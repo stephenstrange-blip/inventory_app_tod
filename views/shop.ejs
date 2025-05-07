@@ -38,7 +38,20 @@
                 <% } else { %>
                   <h2 class="stock">Stock: <i><%= product.stock %></i></h2>
                 <% } %>
+
+                <div class="options">
+                  <p><img src="/assets/arrow_down.svg" alt=""></p>
+                  <ul class="hidden">
+                    <a href="/shop/<%= product.product_id %>/edit">
+                      <li>Edit Stock</li>
+                    </a>
+                    <a href="/shop/<%= product.product_id %>/delete">
+                      <li>Remove Item</li>
+                    </a>
+                  </ul>
+                </div>
               </span>
+              
             </div>
           </form>
         <% }) %>
@@ -51,6 +64,24 @@
             e.stopImmediatePropagation();
             e.stopPropagation();
             card.parentElement.submit();
+          })
+        })
+
+        const options = document.querySelectorAll(".options > p");
+        options.forEach(option => {
+          const list = option.nextElementSibling;
+          const classes = list.classList;
+          
+          option.addEventListener("click", (e) => {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            classes.toggle("hidden");
+          })
+          
+          list.addEventListener("mouseleave", (e) => {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            classes.toggle("hidden");
           })
         })
       </script>

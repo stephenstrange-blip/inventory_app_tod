@@ -7,7 +7,7 @@ body {
 }
 
 .body_container,
-header {
+header, .options {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -48,6 +48,7 @@ main {
   flex-flow: column nowrap;
   color: white;
   overflow: hidden;
+  position: relative;
 }
 
 .card span {
@@ -68,7 +69,7 @@ main {
   height: 70%;
 }
 
-.card > p > img {
+.card > p > img, .options img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -76,4 +77,37 @@ main {
 
 .price i {
   font-style: normal;
+}
+
+.options {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: revert;
+  align-items: flex-end;
+  padding: .2rem;
+  cursor: pointer;
+}
+.options a {
+  text-decoration: none;
+}
+
+.options li {
+  padding-right: .2rem;
+  color: rgb(167, 175, 182);
+  background-color: rgba(47, 48, 48, 0.74);
+  padding: .4rem .5rem;
+  border-radius: 5px;
+  text-align: end;
+  list-style: none;
+  
+}
+
+.options li:hover {
+  color: white;
+}
+
+
+.hidden {
+  display: none;
 }
