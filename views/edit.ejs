@@ -34,11 +34,17 @@
           </div>
           <div class="buttons">
             <button type="submit">Update</button>
-            <button>Cancel</button>
+            <a href="/shop">Cancel</a>
           </div>
         </form>
       </span>
     </div>
   </div>
+  <script>
+    const cancelBtn = document.querySelector(".buttons > a > button");
+    cancelBtn.addEventListener("click", e => {
+      e.preventDefault();
+    })
+  </script>
 </body>
 </html>

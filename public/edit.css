@@ -34,7 +34,7 @@ form > *,
 form {
   flex-flow: column nowrap;
   width: revert;
-}
+} 
 .card > p {
   width: 50%;
   height: 75%;
@@ -67,6 +67,13 @@ form > * {
   gap: 1rem;
   width: 100%;
 }
+
 .buttons * {
   padding: .2rem .3rem;
+}
+
+.buttons a {
+  background-color: white;
+  text-decoration: none;
+  color: black;
 }
